@@ -1,0 +1,36 @@
+# AutoDev schema to implement; not native Hermes configuration.
+schema_version: 2
+setup_state: draft
+project:
+  id: null  # init mints a stable UUID only on approved creation
+  slug: null
+  name: null
+sources:
+  requirements: []
+  context: []
+  discovery:
+    roots: ["."]
+  execution_index: .agent/EXECUTION.yaml
+execution:
+  harness: gajae
+  workflow: approved_roadmap_only
+  base_policy: dependencies_integrated
+  target_ref: null
+  max_active_milestones: 1
+  max_primary_actions_per_cycle: 1
+verification:
+  commands: []
+  acceptance_sources: []
+  require_independent_review: true
+authority:
+  requested:
+    implementation: human
+    repair: human
+    commit: human
+    push: human
+    create_pr: human
+    merge: denied
+    force_push: denied
+    modify_approved_plan: denied
+    modify_acceptance_criteria: denied
+    change_credentials: denied

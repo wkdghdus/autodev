@@ -1,0 +1,4 @@
+# Proposed index, not evidence of approved work.
+schema_version: 2
+project_id: null  # must match PROJECT.yaml after init
+milestones: []

@@ -1,0 +1,11 @@
+{
+  "scope": "documentation package only; no AutoDev implementation or live Hermes/GJC tests run",
+  "milestones": 24,
+  "fault_cases": 70,
+  "yaml_templates_parse": true,
+  "json_metadata_parse": true,
+  "markdown_fences_balanced": true,
+  "milestone_sections_present": true,
+  "milestone_references_valid": true,
+  "complete_spec_words": 17062
+}
