@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "milestone": "AD-00",
+  "baseline_kind": "PROVIDED_FILES_ONLY",
+  "evidence_class": "PROVIDED_FILE",
+  "live_verified": false,
+  "live_claims": [],
+  "sanitization": {
+    "credential_values_included": false,
+    "account_identifiers_included": false,
+    "absolute_host_paths_included": false,
+    "environment_values_included": false,
+    "native_session_ids_included": false,
+    "native_schedule_ids_included": false,
+    "process_inventory_included": false
+  },
+  "provided_artifact_groups": [
+    {
+      "kind": "specification_and_session_documents",
+      "evidence_class": "PROVIDED_FILE",
+      "paths": [
+        "00-PROJECT-SPECIFICATION.md",
+        "01-EVIDENCE-AND-DECISIONS.md",
+        "02-ACCEPTANCE-AND-FAULT-MATRIX.md",
+        "03-CODING-AGENT-START.md",
+        "04-CONTRACT-REFERENCE.md",
+        "05-MILESTONE-PLAN.md",
+        "README.md"
+      ],
+      "identity_manifest": "reference/SHA256SUMS.json"
+    },
+    {
+      "kind": "milestone_definitions",
+      "evidence_class": "PROVIDED_FILE",
+      "path_pattern": "milestones/AD-00.md through milestones/AD-23.md",
+      "count": 24,
+      "identity_manifest": "reference/SHA256SUMS.json"
+    },
+    {
+      "kind": "reference_metadata",
+      "evidence_class": "PROVIDED_FILE",
+      "paths": [
+        "reference/PACKAGE-CHECKS.json",
+        "reference/SHA256SUMS.json",
+        "reference/SOURCES.md",
+        "reference/source_manifest.json"
+      ],
+      "identity_manifest": "reference/SHA256SUMS.json"
+    },
+    {
+      "kind": "templates",
+      "evidence_class": "PROVIDED_FILE",
+      "paths": [
+        "templates/EXECUTION.draft.yaml",
+        "templates/PROJECT.draft.yaml",
+        "templates/milestone-verification.md"
+      ],
+      "identity_manifest": "reference/SHA256SUMS.json"
+    }
+  ],
+  "source_reports": {
+    "manifest": "reference/source_manifest.json",
+    "bodies_available": false,
+    "live_verified": false,
+    "evidence_class": "PROVIDED_FILE",
+    "interpretation": "identity metadata and reported observations only"
+  },
+  "evidence_class_definitions": {
+    "PROVIDED_FILE": "Directly supported by a supplied repository file.",
+    "SIMULATED": "Intentionally synthetic fixture; never a live observation.",
+    "NOT_RUN": "Check or operation was not attempted.",
+    "BLOCKED_EXTERNAL": "Live proof requires unavailable or unauthorized external access; not PASS."
+  },
+  "compatibility_unknowns": [
+    {
+      "category": "hermes",
+      "status": "NOT_RUN",
+      "live_status": "BLOCKED_EXTERNAL",
+      "items": [
+        "distribution and executable identity/version",
+        "configuration schema and API/protocol generation",
+        "supported read, mutation, and probe operations",
+        "argument schemas, capability hashes, error mappings, restart semantics",
+        "scheduling, credential-pool, fallback, MCP, Tool Search, skill and credential-metadata capabilities",
+        "CLI, gateway and worker configuration generations"
+      ]
+    },
+    {
+      "category": "gjc",
+      "status": "NOT_RUN",
+      "live_status": "BLOCKED_EXTERNAL",
+      "items": [
+        "distribution, executable identity/version and optional interpreter requirement",
+        "Coordinator, MCP, CLI and SDK protocol generation",
+        "managed-worktree and session/turn lifecycle semantics",
+        "broker identity/generation, cancellation and shutdown behavior",
+        "idempotency, reconciliation, tracing and permission hooks"
+      ]
+    },
+    {
+      "category": "runtimes",
+      "status": "NOT_RUN",
+      "live_status": "BLOCKED_EXTERNAL",
+      "items": [
+        "OS and architecture",
+        "Python and optional Bun/Ruby versions",
+        "shell, PATH, cwd, executable resolution and service manager",
+        "interactive, gateway, MCP, verifier and scheduled-worker environment differences",
+        "installed generations and restart requirements"
+      ]
+    },
+    {
+      "category": "routes_accounts",
+      "status": "NOT_RUN",
+      "live_status": "BLOCKED_EXTERNAL",
+      "items": [
+        "effective provider, model and endpoint for every model-using route",
+        "credential mechanism and redacted account identity/source",
+        "credential-pool rotation, primary fallback and auxiliary routing",
+        "entitlement, overage, paid-credit and route-closure enforcement",
+        "quota telemetry, freshness, reservations, concurrency and resource limits"
+      ]
+    },
+    {
+      "category": "profiles",
+      "status": "NOT_RUN",
+      "live_status": "BLOCKED_EXTERNAL",
+      "items": [
+        "profile/service identity and ownership/adoption state",
+        "loaded skill/context hashes, disabled toolsets and Tool Search behavior",
+        "repository and Git common-directory identity and worktree topology",
+        "authority artifacts, approved plan hashes and protected files/refs",
+        "AutoDev installation/project identity and host-owned state"
+      ]
+    },
+    {
+      "category": "scheduling",
+      "status": "NOT_RUN",
+      "live_status": "BLOCKED_EXTERNAL",
+      "items": [
+        "scheduler ownership and exact job identity",
+        "paused creation, readback and disable semantics",
+        "effective job route, cwd, profile, PATH and concurrency",
+        "missed-occurrence coalescing and recursion prevention",
+        "pre-inference gating, deployment epochs and scheduled canary behavior"
+      ]
+    },
+    {
+      "category": "messaging",
+      "status": "NOT_RUN",
+      "live_status": "BLOCKED_EXTERNAL",
+      "items": [
+        "platform and profile-bound destination",
+        "content restrictions and sanitization",
+        "acknowledgement/message identity and delivery proof",
+        "retry, deduplication, outbox and history behavior",
+        "execution/delivery separation and notification-failure policy"
+      ]
+    },
+    {
+      "category": "host_process",
+      "status": "NOT_RUN",
+      "live_status": "BLOCKED_EXTERNAL",
+      "items": [
+        "host topology, uptime, sleep/offline behavior and heartbeat source",
+        "process/service ownership, PID reuse and runtime generations",
+        "active or uncertain work, locks and restart recovery",
+        "gateway/scheduler ownership and external monitoring availability"
+      ]
+    },
+    {
+      "category": "enforcement",
+      "status": "NOT_RUN",
+      "live_status": "BLOCKED_EXTERNAL",
+      "items": [
+        "filesystem roots and read-only/control-file protections",
+        "Git, network, credential and provider-route restrictions",
+        "raw Coordinator and terminal bypass prevention",
+        "grant/revocation and backend negative-test capability",
+        "journal, lock, reservation and compare-before-write durability",
+        "strict enforcement versus POLICY_ONLY capability"
+      ]
+    }
+  ],
+  "operations": {
+    "live_probes": "NOT_RUN",
+    "credential_or_account_inspection": "NOT_RUN",
+    "native_process_inspection": "NOT_RUN",
+    "network_calls": "NOT_RUN",
+    "model_calls": "NOT_RUN",
+    "messages": "NOT_RUN",
+    "live_mutations": "NOT_RUN"
+  },
+  "external_capability_result": {
+    "result": "BLOCKED_EXTERNAL",
+    "pass": false,
+    "reason": "AD-00 has no authority or access for live environment verification."
+  }
+}

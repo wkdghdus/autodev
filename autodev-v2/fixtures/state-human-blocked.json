@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "state": "human-blocked",
+  "operation_id": "sim-human-blocked-001",
+  "evidence_class": "SIMULATED",
+  "live_verified": false,
+  "native_ids": [],
+  "allowed_effects": [],
+  "observed_effects": []
+}

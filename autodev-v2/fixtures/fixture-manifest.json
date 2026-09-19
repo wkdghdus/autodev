@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "fixtures": [
+    "state-ready.json",
+    "state-active.json",
+    "state-uncertain.json",
+    "state-verifying.json",
+    "state-human-blocked.json",
+    "state-completed.json"
+  ],
+  "evidence_class": "SIMULATED",
+  "live_verified": false,
+  "note": "Synthetic state examples only; not traces from a live Hermes, Gajae, cron, broker, account, or provider session."
+}

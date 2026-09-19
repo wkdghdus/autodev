@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Lessons Learned from Nous Autonomous Supervisor Setup",
+      "filename": "Pasted markdown(2).md",
+      "sha256": "6ace331bbf3f2ee7af23b46f8cbd579290c434e0f3d913a0e0eccc2d035b928d",
+      "evidence_class": "PROVIDED_FILE",
+      "original_body_available": false,
+      "live_verified": false
+    },
+    {
+      "id": "S2",
+      "title": "Hermes + Gajae Automated Onboarding: Lessons from Nous",
+      "filename": "Pasted markdown (2).md",
+      "sha256": "d0ea218d74b658f174bd8566c8bf017981b06d7df51a12df4ecb94e997bf052b",
+      "evidence_class": "PROVIDED_FILE",
+      "original_body_available": false,
+      "live_verified": false
+    },
+    {
+      "id": "S3",
+      "title": "Lessons Learned From Nous Autonomous Onboarding",
+      "filename": "Pasted markdown (3).md",
+      "sha256": "bdac1bb84c3de3f695462d371ee3509e9a98007f9091b2292ad6f83eb2dd43b5",
+      "evidence_class": "PROVIDED_FILE",
+      "original_body_available": false,
+      "live_verified": false
+    }
+  ],
+  "note": "Identity-only records; original upload bodies are unavailable and no live verification was performed."
+}

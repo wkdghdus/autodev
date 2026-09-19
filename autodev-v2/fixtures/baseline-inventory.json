@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "evidence_class": "NOT_RUN",
+  "live_verified": false,
+  "provided_artifacts": [
+    "00-PROJECT-SPECIFICATION.md",
+    "01-EVIDENCE-AND-DECISIONS.md",
+    "02-ACCEPTANCE-AND-FAULT-MATRIX.md",
+    "03-CODING-AGENT-START.md",
+    "04-CONTRACT-REFERENCE.md",
+    "05-MILESTONE-PLAN.md",
+    "reference/SOURCES.md",
+    "reference/source_manifest.json",
+    "templates/PROJECT.draft.yaml",
+    "templates/EXECUTION.draft.yaml"
+  ],
+  "compatibility_unknowns": [
+    "hermes_distribution_and_version",
+    "hermes_cron_model_resolution",
+    "hermes_credential_pool_routes",
+    "hermes_fallback_provider_routes",
+    "gjc_distribution_and_version",
+    "gjc_coordinator_api_generation",
+    "runtime_interpreter_and_path",
+    "repo_root_and_managed_worktree_membership",
+    "account_entitlement_and_overage_controls",
+    "model_profile_and_route_resolution",
+    "schedule_identity_and_pause_capability",
+    "discord_or_delivery_channel_acknowledgement",
+    "host_process_generation_and_locking",
+    "effect_enforcement_backend"
+  ],
+  "note": "Provided-file-only AD-00 baseline. Unknowns require separately authorized probes in later milestones."
+}

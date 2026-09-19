@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "live_verified": false,
+  "installation": {
+    "distribution": null,
+    "executable_realpath": null,
+    "version": null
+  },
+  "hermes": {
+    "api_generation": null,
+    "cron_capability": null,
+    "credential_pools": null,
+    "fallback_providers": null
+  },
+  "gajae": {
+    "distribution": null,
+    "coordinator_api_generation": null,
+    "managed_worktree_selector": null
+  },
+  "runtime": {
+    "interpreter": null,
+    "path": null,
+    "profile_identity": null,
+    "service_identity": null
+  },
+  "routes_and_accounts": {
+    "effective_model_routes": null,
+    "provider_accounts": null,
+    "entitlement_or_overage_controls": null,
+    "quota_telemetry": null
+  },
+  "scheduling_and_delivery": {
+    "schedule_identity": null,
+    "pause_or_disable_capability": null,
+    "delivery_target": null
+  },
+  "host_and_enforcement": {
+    "repo_realpath": null,
+    "git_common_dir_realpath": null,
+    "lock_backend": null,
+    "effect_enforcement_backend": null
+  },
+  "note": "AD-00 template only. Null values are explicit unknowns for later authorized compatibility probes."
+}

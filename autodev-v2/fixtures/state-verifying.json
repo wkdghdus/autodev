@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "state": "verifying",
+  "operation_id": "sim-verifying-001",
+  "evidence_class": "SIMULATED",
+  "live_verified": false,
+  "native_ids": [],
+  "allowed_effects": [],
+  "observed_effects": []
+}
