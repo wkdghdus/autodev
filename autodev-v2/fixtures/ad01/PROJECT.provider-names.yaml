@@ -1,0 +1,41 @@
+schema_version: 2
+setup_state: configured
+project:
+  id: 123e4567-e89b-12d3-a456-426614174000
+  slug: provider-name-negative
+  name: Provider Name Negative
+sources:
+  requirements:
+    - docs/openai-approved.md
+  context:
+    - docs/Hermes Autonomy Enabled.md
+  discovery:
+    roots:
+      - src
+  execution_index: .agent/EXECUTION-approved.yaml
+execution:
+  harness: gajae
+  workflow: approved_roadmap_only
+  base_policy: dependencies_integrated
+  target_ref: refs/heads/main
+  max_active_milestones: 1
+  max_primary_actions_per_cycle: 1
+verification:
+  commands:
+    - id: local-approved-check
+      argv:
+        - python3
+        - -m
+        - unittest
+      cwd: .
+      input_paths:
+        - tests
+      network_policy: none
+      timeout_seconds: 120
+      approval_binding: filename-only
+  acceptance_sources:
+    - docs/APPROVED-status.md
+  require_independent_review: true
+authority:
+  requested:
+    openai: autonomous

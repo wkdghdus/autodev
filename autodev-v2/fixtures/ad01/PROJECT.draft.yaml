@@ -1,0 +1,25 @@
+schema_version: 2
+setup_state: draft
+project:
+  id: null
+  slug: null
+  name: null
+sources:
+  requirements: []
+  context: []
+  discovery:
+    roots: []
+  execution_index: null
+execution:
+  harness: null
+  workflow: null
+  base_policy: null
+  target_ref: null
+  max_active_milestones: null
+  max_primary_actions_per_cycle: null
+verification:
+  commands: []
+  acceptance_sources: []
+  require_independent_review: null
+authority:
+  requested: {}

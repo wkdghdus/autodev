@@ -1,0 +1,44 @@
+schema_version: 2
+setup_state: configured
+project:
+  id: 123e4567-e89b-12d3-a456-426614174000
+  slug: ad01-synthetic
+  name: AD-01 Synthetic
+sources:
+  requirements:
+    - docs/requirements.md
+  context:
+    - AGENTS.md
+  discovery:
+    roots:
+      - src
+      - docs/Planning Space
+  execution_index: .agent/EXECUTION.yaml
+execution:
+  harness: gajae
+  workflow: approved_roadmap_only
+  base_policy: dependencies_integrated
+  target_ref: refs/heads/main
+  max_active_milestones: 1
+  max_primary_actions_per_cycle: 1
+verification:
+  commands:
+    - id: unit
+      argv:
+        - python3
+        - -m
+        - unittest
+      cwd: .
+      input_paths:
+        - src
+        - tests
+      network_policy: none
+      timeout_seconds: 120
+      approval_binding: approval/unit
+  acceptance_sources:
+    - milestones/AD-01.md
+  require_independent_review: true
+authority:
+  requested:
+    repo_write: human
+    external_message: denied

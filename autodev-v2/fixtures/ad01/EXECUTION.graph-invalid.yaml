@@ -1,0 +1,73 @@
+schema_version: 2
+project_id: 123e4567-e89b-12d3-a456-426614174000
+milestones:
+  - id: AD-01
+    title: First duplicate
+    depends_on:
+      - AD-02
+      - MISSING
+    authority_refs:
+      - path: milestones/AD-01.md
+        reference: success criteria
+        digest: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    acceptance_refs:
+      - path: milestones/AD-01.md
+        reference: AD-01-AC1
+        digest: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+    scope:
+      allowed_paths: []
+      exclusions: []
+      prohibited_operations: []
+    verification_ids: []
+    approval:
+      state: revoked
+      receipt_ref: null
+    base_policy: dependencies_integrated
+    evidence_refs: []
+  - id: AD-02
+    title: Creates a cycle
+    depends_on:
+      - AD-01
+    authority_refs:
+      - path: milestones/AD-01.md
+        reference: success criteria
+        digest: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    acceptance_refs:
+      - path: milestones/AD-01.md
+        reference: AD-01-AC1
+        digest: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+    scope:
+      allowed_paths:
+        - src
+      exclusions: []
+      prohibited_operations: []
+    verification_ids:
+      - unit
+    approval:
+      state: proposed
+      receipt_ref: null
+    base_policy: dependencies_integrated
+    evidence_refs: []
+  - id: AD-01
+    title: Duplicate ID
+    depends_on: []
+    authority_refs:
+      - path: milestones/AD-01.md
+        reference: success criteria
+        digest: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    acceptance_refs:
+      - path: milestones/AD-01.md
+        reference: AD-01-AC1
+        digest: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+    scope:
+      allowed_paths:
+        - docs
+      exclusions: []
+      prohibited_operations: []
+    verification_ids:
+      - unit
+    approval:
+      state: approved
+      receipt_ref: null
+    base_policy: dependencies_integrated
+    evidence_refs: []

@@ -1,0 +1,30 @@
+schema_version: 2
+project_id: 123e4567-e89b-12d3-a456-426614174000
+milestones:
+  - id: AD-01
+    title: Schemas identities authority and orthogonal states
+    depends_on: []
+    authority_refs:
+      - path: milestones/AD-01.md
+        reference: success criteria
+        digest: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    acceptance_refs:
+      - path: milestones/AD-01.md
+        reference: AD-01-AC1
+        digest: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+    scope:
+      allowed_paths:
+        - src/autodev/contracts
+        - tests
+      exclusions:
+        - .git
+      prohibited_operations:
+        - credential_read
+        - native_mutation
+    verification_ids:
+      - unit
+    approval:
+      state: approved
+      receipt_ref: receipts/ad01-approval.yaml
+    base_policy: dependencies_integrated
+    evidence_refs: []

@@ -8,7 +8,7 @@ version = "0.0.0"
 description = "AutoDev V2 scaffold and fail-closed CLI placeholders."
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = ["ruamel.yaml==0.19.1"]
 
 [project.scripts]
 autodev = "autodev.cli:main"
