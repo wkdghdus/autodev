@@ -1,3 +1,5 @@
+> **Human/reference edition.** This combined specification is not default coding-agent context for ordinary AD milestone work. Enter `autodev-v2/`, follow its `AGENTS.md`, and build the selected milestone's bounded snapshot. The normative source documents and milestone requirements remain authoritative; this notice does not change them.
+
 # AutoDev v2.0 - Complete Specification and Agent Handoff
 
 This single-file edition combines the normative specification, evidence decisions, contract reference, 24 milestone handoffs, 70 fault scenarios, startup prompt, and source list. In-package relative references refer to the companion ZIP. No implementation or live certification is claimed.

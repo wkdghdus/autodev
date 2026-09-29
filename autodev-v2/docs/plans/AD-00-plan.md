@@ -3,6 +3,9 @@
 Status: approved consensus plan
 Milestone: AD-00 — Baseline, scope lock, and evidence inventory
 Boundary: repository-local work under `autodev-v2/`; stop before AD-01
+Context snapshot: .omx/context/AD-00-7102baac701d.md
+Context SHA-256: 7102baac701d3dc4d502958c99769a3b5ed5638530fe8fb2e0c68418101c5d65
+Context map SHA-256: 25a4b314812fd5ffb57b1c31ae7c01f79c8bcc62b262f64fe52eb84b7a33087f
 
 ## Scope
 
@@ -114,9 +117,9 @@ Tests invoke all 13 names and require this exact fail-closed behavior.
 2. Add `pyproject.toml`, `src/autodev/__init__.py`, `src/autodev/__main__.py`, and
    a standard-library CLI implementing import/help/version plus the exact
    placeholder contract.
-3. Add S1–S3 identity-only evidence records from
-   `reference/source_manifest.json` and `reference/SOURCES.md`; do not recreate
-   absent report text.
+3. Add S1–S3 identity-only evidence records from the bounded
+   `reference/SOURCES.md` selection in the canonical context snapshot; do not
+   recreate absent report text or inspect sources outside that selection.
 4. Add a sanitized human-readable baseline and machine-readable inventory based
    only on provided files. Mark all live observations `NOT_RUN` or
    `BLOCKED_EXTERNAL` and enumerate later compatibility unknowns.
@@ -131,7 +134,8 @@ Tests invoke all 13 names and require this exact fail-closed behavior.
    baseline completeness, fixture labels, redaction canaries, effect capture, and
    F63 classification.
 9. Run the verification commands, inspect changed paths, and only then write the
-   separate milestone verification report from the supplied template.
+   separate milestone verification report with the snapshot-required changed
+   files, commands, exit codes, acceptance evidence, effects, limits, and handoff.
 
 ## Verification commands
 
@@ -189,7 +193,7 @@ environment probes. No such follow-up is authorized by this plan.
 
 The approved review tightened the initial proposal by freezing all 13 placeholder
 names; choosing exit code 7; requiring deterministic minimal JSON; prohibiting
-command options and behavior; tying verification to the supplied milestone
-template; and documenting that the local effect harness is not OS-level proof.
+command options and behavior; tying verification to the bounded snapshot's
+evidence contract; and documenting that the local effect harness is not OS-level proof.
 These constraints are normative for this milestone and must not be relaxed to make
 tests pass.

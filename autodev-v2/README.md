@@ -2,13 +2,13 @@
 
 An upgraded specification based on three Nous bottleneck reports. This package contains requirements, work units, test cases and safe configuration examples, not an implementation or installed Hermes skill.
 
-## Start here
+## Human reference documents
 
-1. Read `00-PROJECT-SPECIFICATION.md` for the normative architecture and guardrails.
-2. Read `01-EVIDENCE-AND-DECISIONS.md` for incident traceability and explicit conflict resolution.
-3. Use `02-ACCEPTANCE-AND-FAULT-MATRIX.md` for 70 failure/acceptance scenarios.
-4. Use `03-CODING-AGENT-START.md` to begin AD-00 only.
-5. Consult `04-CONTRACT-REFERENCE.md` and `05-MILESTONE-PLAN.md`; individual handoffs are in `milestones/`.
+The source library remains available for human review: `00-PROJECT-SPECIFICATION.md` defines architecture and guardrails; `01-EVIDENCE-AND-DECISIONS.md` records incident traceability and decisions; `02-ACCEPTANCE-AND-FAULT-MATRIX.md` records 70 failure/acceptance scenarios; `04-CONTRACT-REFERENCE.md` defines contracts; and `05-MILESTONE-PLAN.md` describes the full roadmap. Individual handoffs are in `milestones/`.
+
+## Coding-agent entrypoint
+
+Follow `AGENTS.md` in this directory. Select one `AD-XX` milestone, run `python scripts/build_context.py AD-XX`, and use its generated bounded snapshot through `ralplan` and `ralph`. The snapshot resolves the selected normative sections, fault rows, contracts, and direct predecessor evidence with provenance. The full roadmap and combined specification are reference documents, not default coding-agent context. `03-CODING-AGENT-START.md` is the initial AD-00 prompt.
 
 ## Delivery scope
 

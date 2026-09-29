@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "default_byte_budget": 32768,
+  "shared_documents": [
+    {
+      "path": "context/SHARED-INVARIANTS.md",
+      "selector": {
+        "type": "heading",
+        "value": "# Shared AutoDev Context Invariants"
+      }
+    }
+  ],
+  "fault_matrix": {
+    "path": "02-ACCEPTANCE-AND-FAULT-MATRIX.md",
+    "selector": {
+      "type": "table_row",
+      "value": "F01"
+    }
+  },
+  "milestones": {
+    "AD-00": {
+      "title": "Baseline, scope lock, and evidence inventory",
+      "documents": [
+        {"path": "milestones/AD-00.md", "selector": {"type": "heading", "value": "# AD-00 - Baseline, scope lock, and evidence inventory"}},
+        {"path": "reference/SOURCES.md", "selector": {"type": "heading", "value": "## Uploaded incident reports: primary basis"}}
+      ],
+      "fault_ids": ["F63"],
+      "predecessor_evidence": [],
+      "implementation_roots": ["pyproject.toml", "src/autodev/", "tests/", "fixtures/", "templates/", "docs/plans/", "docs/baseline/", "docs/evidence/", "docs/verification/", "reference/SOURCES.md"]
+    },
+    "AD-01": {
+      "title": "Schemas, identities, authority, and orthogonal states",
+      "documents": [{"path": "milestones/AD-01.md", "selector": {"type": "heading", "value": "# AD-01 - Schemas, identities, authority, and orthogonal states"}}],
+      "fault_ids": ["F02", "F03", "F08", "F66"],
+      "predecessor_evidence": [{"milestone": "AD-00", "path": "docs/verification/AD-00.md", "selector": {"type": "heading", "value": "# AD-00 verification"}}],
+      "implementation_roots": ["src/autodev/contracts/", "src/autodev/models/", "tests/"]
+    },
+    "AD-02": {
+      "title": "Safe storage, command execution, locks, and journals",
+      "documents": [{"path": "milestones/AD-02.md", "selector": {"type": "heading", "value": "# AD-02 - Safe storage, command execution, locks, and journals"}}],
+      "fault_ids": ["F07", "F34", "F36", "F38", "F69", "F70"],
+      "predecessor_evidence": [{"milestone": "AD-01", "path": "docs/verification/AD-01.md", "selector": {"type": "heading", "value": "# AD-01 verification"}}],
+      "implementation_roots": ["src/autodev/storage/", "src/autodev/commands/", "src/autodev/git.py", "tests/"]
+    },
+    "AD-03": {
+      "title": "Friendly init and conservative artifact discovery",
+      "documents": [
+        {"path": "milestones/AD-03.md", "selector": {"type": "heading", "value": "# AD-03 - Friendly init and conservative artifact discovery"}},
+        {"path": "00-PROJECT-SPECIFICATION.md", "selector": {"type": "heading", "value": "### 3.2 Untrusted project content"}},
+        {"path": "00-PROJECT-SPECIFICATION.md", "selector": {"type": "heading", "value": "### 3.3 Git and approval ceilings"}},
+        {"path": "00-PROJECT-SPECIFICATION.md", "selector": {"type": "heading", "value": "### 4.1 Portable repository contract"}},
+        {"path": "00-PROJECT-SPECIFICATION.md", "selector": {"type": "heading", "value": "## 6. Command contracts"}},
+        {"path": "00-PROJECT-SPECIFICATION.md", "selector": {"type": "heading", "value": "## 7. Init: friendly, reversible repository alignment"}},
+        {"path": "04-CONTRACT-REFERENCE.md", "selector": {"type": "heading", "value": "## A. PROJECT.yaml"}}
+      ],
+      "fault_ids": ["F01", "F04", "F05", "F06", "F09", "F46", "F67"],
+      "predecessor_evidence": [
+        {"milestone": "AD-01", "path": "docs/verification/AD-01.md", "selector": {"type": "heading", "value": "# AD-01 verification"}},
+        {"milestone": "AD-02", "path": "docs/verification/AD-02.md", "selector": {"type": "heading", "value": "# AD-02 verification"}}
+      ],
+      "implementation_roots": ["src/autodev/cli.py", "src/autodev/contracts/", "src/autodev/safety/", "tests/", "templates/"]
+    },
+    "AD-04": {
+      "title": "Execution-index compiler and approval binding",
+      "documents": [{"path": "milestones/AD-04.md", "selector": {"type": "heading", "value": "# AD-04 - Execution-index compiler and approval binding"}}],
+      "fault_ids": ["F04", "F44", "F45", "F66"],
+      "predecessor_evidence": [{"milestone": "AD-03", "path": "docs/verification/AD-03.md", "selector": {"type": "heading", "value": "# AD-03 verification"}}],
+      "implementation_roots": ["src/autodev/index/", "src/autodev/approval/", "tests/"]
+    },
+    "AD-05": {
+      "title": "Native capability and runtime compatibility adapters",
+      "documents": [{"path": "milestones/AD-05.md", "selector": {"type": "heading", "value": "# AD-05 - Native capability and runtime compatibility adapters"}}],
+      "fault_ids": ["F10", "F11", "F14", "F29"],
+      "predecessor_evidence": [{"milestone": "AD-02", "path": "docs/verification/AD-02.md", "selector": {"type": "heading", "value": "# AD-02 verification"}}],
+      "implementation_roots": ["src/autodev/runtime/", "src/autodev/native/", "tests/"]
+    },
+    "AD-06": {
+      "title": "Credential metadata and effective billing-route audit",
+      "documents": [{"path": "milestones/AD-06.md", "selector": {"type": "heading", "value": "# AD-06 - Credential metadata and effective billing-route audit"}}],
+      "fault_ids": ["F17", "F19", "F20", "F21", "F22"],
+      "predecessor_evidence": [
+        {"milestone": "AD-01", "path": "docs/verification/AD-01.md", "selector": {"type": "heading", "value": "# AD-01 verification"}},
+        {"milestone": "AD-02", "path": "docs/verification/AD-02.md", "selector": {"type": "heading", "value": "# AD-02 verification"}},
+        {"milestone": "AD-05", "path": "docs/verification/AD-05.md", "selector": {"type": "heading", "value": "# AD-05 verification"}}
+      ],
+      "implementation_roots": ["src/autodev/auth/", "src/autodev/billing/", "tests/"]
+    },
+    "AD-07": {
+      "title": "Resource admission and shared-account budgets",
+      "documents": [{"path": "milestones/AD-07.md", "selector": {"type": "heading", "value": "# AD-07 - Resource admission and shared-account budgets"}}],
+      "fault_ids": ["F18", "F24", "F25", "F26", "F68"],
+      "predecessor_evidence": [{"milestone": "AD-06", "path": "docs/verification/AD-06.md", "selector": {"type": "heading", "value": "# AD-06 verification"}}],
+      "implementation_roots": ["src/autodev/admission/", "src/autodev/resources/", "tests/"]
+    },
+    "AD-08": {
+      "title": "Hermes profile, skill installation, and deterministic environments",
+      "documents": [{"path": "milestones/AD-08.md", "selector": {"type": "heading", "value": "# AD-08 - Hermes profile, skill installation, and deterministic environments"}}],
+      "fault_ids": ["F12", "F13", "F16", "F41", "F62"],
+      "predecessor_evidence": [
+        {"milestone": "AD-03", "path": "docs/verification/AD-03.md", "selector": {"type": "heading", "value": "# AD-03 verification"}},
+        {"milestone": "AD-05", "path": "docs/verification/AD-05.md", "selector": {"type": "heading", "value": "# AD-05 verification"}},
+        {"milestone": "AD-06", "path": "docs/verification/AD-06.md", "selector": {"type": "heading", "value": "# AD-06 verification"}}
+      ],
+      "implementation_roots": ["src/autodev/profiles/", "src/autodev/environment/", "tests/"]
+    },
+    "AD-09": {
+      "title": "MCP configuration and actual-tool-access probe",
+      "documents": [{"path": "milestones/AD-09.md", "selector": {"type": "heading", "value": "# AD-09 - MCP configuration and actual-tool-access probe"}}],
+      "fault_ids": ["F12", "F13", "F14", "F15"],
+      "predecessor_evidence": [
+        {"milestone": "AD-05", "path": "docs/verification/AD-05.md", "selector": {"type": "heading", "value": "# AD-05 verification"}},
+        {"milestone": "AD-08", "path": "docs/verification/AD-08.md", "selector": {"type": "heading", "value": "# AD-08 verification"}}
+      ],
+      "implementation_roots": ["src/autodev/mcp/", "src/autodev/probes/", "tests/"]
+    },
+    "AD-10": {
+      "title": "Managed-worktree and broker lifecycle probes",
+      "documents": [{"path": "milestones/AD-10.md", "selector": {"type": "heading", "value": "# AD-10 - Managed-worktree and broker lifecycle probes"}}],
+      "fault_ids": ["F09", "F27", "F28", "F58"],
+      "predecessor_evidence": [
+        {"milestone": "AD-05", "path": "docs/verification/AD-05.md", "selector": {"type": "heading", "value": "# AD-05 verification"}},
+        {"milestone": "AD-09", "path": "docs/verification/AD-09.md", "selector": {"type": "heading", "value": "# AD-09 verification"}}
+      ],
+      "implementation_roots": ["src/autodev/worktrees/", "src/autodev/broker/", "tests/"]
+    },
+    "AD-11": {
+      "title": "Multi-source execution reconciliation",
+      "documents": [{"path": "milestones/AD-11.md", "selector": {"type": "heading", "value": "# AD-11 - Multi-source execution reconciliation"}}],
+      "fault_ids": ["F30", "F31", "F32", "F38"],
+      "predecessor_evidence": [
+        {"milestone": "AD-04", "path": "docs/verification/AD-04.md", "selector": {"type": "heading", "value": "# AD-04 verification"}},
+        {"milestone": "AD-05", "path": "docs/verification/AD-05.md", "selector": {"type": "heading", "value": "# AD-05 verification"}},
+        {"milestone": "AD-10", "path": "docs/verification/AD-10.md", "selector": {"type": "heading", "value": "# AD-10 verification"}}
+      ],
+      "implementation_roots": ["src/autodev/reconcile/", "src/autodev/execution/", "tests/"]
+    },
+    "AD-12": {
+      "title": "Guarded dispatch, idempotency, and fencing",
+      "documents": [{"path": "milestones/AD-12.md", "selector": {"type": "heading", "value": "# AD-12 - Guarded dispatch, idempotency, and fencing"}}],
+      "fault_ids": ["F33", "F34", "F35", "F36", "F37", "F57"],
+      "predecessor_evidence": [
+        {"milestone": "AD-02", "path": "docs/verification/AD-02.md", "selector": {"type": "heading", "value": "# AD-02 verification"}},
+        {"milestone": "AD-07", "path": "docs/verification/AD-07.md", "selector": {"type": "heading", "value": "# AD-07 verification"}},
+        {"milestone": "AD-11", "path": "docs/verification/AD-11.md", "selector": {"type": "heading", "value": "# AD-11 verification"}}
+      ],
+      "implementation_roots": ["src/autodev/guard/", "src/autodev/dispatch/", "tests/"]
+    },
+    "AD-13": {
+      "title": "Generic supervisor and bounded cycle",
+      "documents": [{"path": "milestones/AD-13.md", "selector": {"type": "heading", "value": "# AD-13 - Generic supervisor and bounded cycle"}}],
+      "fault_ids": ["F39", "F40", "F46", "F53"],
+      "predecessor_evidence": [
+        {"milestone": "AD-04", "path": "docs/verification/AD-04.md", "selector": {"type": "heading", "value": "# AD-04 verification"}},
+        {"milestone": "AD-11", "path": "docs/verification/AD-11.md", "selector": {"type": "heading", "value": "# AD-11 verification"}},
+        {"milestone": "AD-12", "path": "docs/verification/AD-12.md", "selector": {"type": "heading", "value": "# AD-12 verification"}}
+      ],
+      "implementation_roots": ["src/autodev/supervisor/", "skills/", "tests/"]
+    },
+    "AD-14": {
+      "title": "Independent verification and revision applicability",
+      "documents": [{"path": "milestones/AD-14.md", "selector": {"type": "heading", "value": "# AD-14 - Independent verification and revision applicability"}}],
+      "fault_ids": ["F41", "F42", "F43", "F44", "F45"],
+      "predecessor_evidence": [
+        {"milestone": "AD-04", "path": "docs/verification/AD-04.md", "selector": {"type": "heading", "value": "# AD-04 verification"}},
+        {"milestone": "AD-11", "path": "docs/verification/AD-11.md", "selector": {"type": "heading", "value": "# AD-11 verification"}},
+        {"milestone": "AD-13", "path": "docs/verification/AD-13.md", "selector": {"type": "heading", "value": "# AD-13 verification"}}
+      ],
+      "implementation_roots": ["src/autodev/verification/", "src/autodev/revisions/", "tests/"]
+    },
+    "AD-15": {
+      "title": "Doctor, active validation ladder, and admission receipts",
+      "documents": [{"path": "milestones/AD-15.md", "selector": {"type": "heading", "value": "# AD-15 - Doctor, active validation ladder, and admission receipts"}}],
+      "fault_ids": ["F47", "F48", "F49", "F65"],
+      "predecessor_evidence": [],
+      "implementation_roots": ["src/autodev/doctor/", "src/autodev/validation/", "tests/"]
+    },
+    "AD-16": {
+      "title": "Idempotent onboarding and reviewed remediation",
+      "documents": [{"path": "milestones/AD-16.md", "selector": {"type": "heading", "value": "# AD-16 - Idempotent onboarding and reviewed remediation"}}],
+      "fault_ids": ["F05", "F06", "F07", "F62"],
+      "predecessor_evidence": [{"milestone": "AD-15", "path": "docs/verification/AD-15.md", "selector": {"type": "heading", "value": "# AD-15 verification"}}],
+      "implementation_roots": ["src/autodev/onboard/", "src/autodev/repair/", "tests/"]
+    },
+    "AD-17": {
+      "title": "Actual gateway environment and delivery proof",
+      "documents": [{"path": "milestones/AD-17.md", "selector": {"type": "heading", "value": "# AD-17 - Actual gateway environment and delivery proof"}}],
+      "fault_ids": ["F41", "F55", "F56", "F63"],
+      "predecessor_evidence": [
+        {"milestone": "AD-08", "path": "docs/verification/AD-08.md", "selector": {"type": "heading", "value": "# AD-08 verification"}},
+        {"milestone": "AD-15", "path": "docs/verification/AD-15.md", "selector": {"type": "heading", "value": "# AD-15 verification"}},
+        {"milestone": "AD-16", "path": "docs/verification/AD-16.md", "selector": {"type": "heading", "value": "# AD-16 verification"}}
+      ],
+      "implementation_roots": ["src/autodev/gateway/", "src/autodev/delivery/", "tests/"]
+    },
+    "AD-18": {
+      "title": "Paused canary, guarded cron, and explicit enablement",
+      "documents": [{"path": "milestones/AD-18.md", "selector": {"type": "heading", "value": "# AD-18 - Paused canary, guarded cron, and explicit enablement"}}],
+      "fault_ids": ["F23", "F50", "F51", "F52", "F53", "F54", "F68"],
+      "predecessor_evidence": [
+        {"milestone": "AD-07", "path": "docs/verification/AD-07.md", "selector": {"type": "heading", "value": "# AD-07 verification"}},
+        {"milestone": "AD-12", "path": "docs/verification/AD-12.md", "selector": {"type": "heading", "value": "# AD-12 verification"}},
+        {"milestone": "AD-15", "path": "docs/verification/AD-15.md", "selector": {"type": "heading", "value": "# AD-15 verification"}},
+        {"milestone": "AD-17", "path": "docs/verification/AD-17.md", "selector": {"type": "heading", "value": "# AD-17 verification"}}
+      ],
+      "implementation_roots": ["src/autodev/cron/", "src/autodev/enable/", "tests/"]
+    },
+    "AD-19": {
+      "title": "Disable, restart reconciliation, and safe recovery",
+      "documents": [{"path": "milestones/AD-19.md", "selector": {"type": "heading", "value": "# AD-19 - Disable, restart reconciliation, and safe recovery"}}],
+      "fault_ids": ["F37", "F55", "F59", "F60", "F61"],
+      "predecessor_evidence": [
+        {"milestone": "AD-11", "path": "docs/verification/AD-11.md", "selector": {"type": "heading", "value": "# AD-11 verification"}},
+        {"milestone": "AD-12", "path": "docs/verification/AD-12.md", "selector": {"type": "heading", "value": "# AD-12 verification"}},
+        {"milestone": "AD-16", "path": "docs/verification/AD-16.md", "selector": {"type": "heading", "value": "# AD-16 verification"}},
+        {"milestone": "AD-18", "path": "docs/verification/AD-18.md", "selector": {"type": "heading", "value": "# AD-18 verification"}}
+      ],
+      "implementation_roots": ["src/autodev/disable/", "src/autodev/recovery/", "tests/"]
+    },
+    "AD-20": {
+      "title": "Adversarial acceptance and enforcement audit",
+      "documents": [{"path": "milestones/AD-20.md", "selector": {"type": "heading", "value": "# AD-20 - Adversarial acceptance and enforcement audit"}}],
+      "fault_ids": ["F01-F70"],
+      "predecessor_evidence": [{"milestone": "AD-19", "path": "docs/verification/AD-19.md", "selector": {"type": "heading", "value": "# AD-19 verification"}}],
+      "implementation_roots": ["tests/faults/", "tests/integration/", "docs/verification/"]
+    },
+    "AD-21": {
+      "title": "Nous shadow parity and controlled migration plan",
+      "documents": [{"path": "milestones/AD-21.md", "selector": {"type": "heading", "value": "# AD-21 - Nous shadow parity and controlled migration plan"}}],
+      "fault_ids": ["F30", "F41", "F44", "F64"],
+      "predecessor_evidence": [{"milestone": "AD-20", "path": "docs/verification/AD-20.md", "selector": {"type": "heading", "value": "# AD-20 verification"}}],
+      "implementation_roots": ["src/autodev/parity/", "docs/verification/", "tests/"]
+    },
+    "AD-22": {
+      "title": "Independent second-project pilot",
+      "documents": [{"path": "milestones/AD-22.md", "selector": {"type": "heading", "value": "# AD-22 - Independent second-project pilot"}}],
+      "fault_ids": ["F05", "F48", "F57", "F58", "F65"],
+      "predecessor_evidence": [
+        {"milestone": "AD-20", "path": "docs/verification/AD-20.md", "selector": {"type": "heading", "value": "# AD-20 verification"}},
+        {"milestone": "AD-21", "path": "docs/verification/AD-21.md", "selector": {"type": "heading", "value": "# AD-21 verification"}}
+      ],
+      "implementation_roots": ["examples/", "docs/runbooks/", "tests/"]
+    },
+    "AD-23": {
+      "title": "Release, operator runbooks, and evidence freeze",
+      "documents": [{"path": "milestones/AD-23.md", "selector": {"type": "heading", "value": "# AD-23 - Release, operator runbooks, and evidence freeze"}}],
+      "fault_ids": ["full regression suite"],
+      "predecessor_evidence": [{"milestone": "AD-22", "path": "docs/verification/AD-22.md", "selector": {"type": "heading", "value": "# AD-22 verification"}}],
+      "implementation_roots": ["docs/runbooks/", "docs/verification/", "dist/", "tests/"]
+    }
+  }
+}
